@@ -1,6 +1,41 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 {-# LANGUAGE PatternSynonyms #-}
-module FFI where
+
+module Network.Ping.FFI
+( ping_construct
+, ping_destroy
+, ping_setopt
+, ping_host_add
+, ping_send
+, ping_host_remove
+, ping_iterator_get
+, ping_iterator_next
+, ping_get_error
+, ping_iterator_get_info
+, Option(
+      OPT_TIMEOUT
+    , OPT_TTL
+    , OPT_AF
+    , OPT_DATA
+    , OPT_SOURCE
+    , OPT_DEVICE
+    , OPT_QOS
+    , OPT_MARK
+  )
+, Info(
+    INFO_HOSTNAME
+  , INFO_ADDRESS
+  , INFO_FAMILY
+  , INFO_LATENCY
+  , INFO_SEQUENCE
+  , INFO_IDENT
+  , INFO_DATA
+  , INFO_USERNAME
+  , INFO_DROPPED
+  , INFO_RECV_TTL
+  , INFO_RECV_QOS
+)
+) where
 
 import Foreign
 import Foreign.C
