@@ -1,7 +1,9 @@
 # libhping
 
-Haskell bindings for [liboping](https://noping.cc/)
+Simple	Haskell bindings for [liboping](https://noping.cc/)
 
-```bash
-sudo ghci FFI.hs -L/nix/store/mr9l0gdwxy0azcwrj8dhrwc91jjq51id-liboping-1.10.0/lib -loping
-```
+On non nix/nixos systems, this library requires liboping to be accessible 
+via `/usr/lib` or `$LD_LIBRARY_PATH` which you can install using whatever
+package manager you want.
+
+If you're a nix/nixos user, you already know what to do.

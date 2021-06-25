@@ -4,22 +4,23 @@ cabal-version:       >=1.10
 
 name:                libhping
 version:             0.1.0.0
--- synopsis:
--- description:
--- bug-reports:
--- license:
 license-file:        LICENSE
 author:              Cameron Dart
 maintainer:          cdart2@illinois.edu
--- copyright:
--- category:
 build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
 
 library
-  exposed-modules:     MyLib
-  -- other-modules:
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
-  -- hs-source-dirs:
+  exposed-modules:     Network.Ping.FFI
+                     , Network.Ping
+  extra-libraries:     oping
   default-language:    Haskell2010
+  build-depends:       base >=4.14 && <4.15
+  hs-source-dirs:      src
+
+executable example
+  default-language:    Haskell2010
+  build-depends:       base >=4.14 && <4.15
+                     , libhping
+  hs-source-dirs:      example
+  main-is:             Main.hs
