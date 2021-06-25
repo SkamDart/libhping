@@ -148,13 +148,12 @@ foreign import ccall unsafe
 foreign import ccall unsafe
   ping_iterator_count :: PingObj -> CInt
 
--- |The ping_get_error method returns an error message indicating the last error encountered. This method is not thread safe whatsoever.
+-- | The ping_get_error method returns an error message indicating the last error encountered. This method is not thread safe whatsoever.
 foreign import ccall unsafe
   ping_get_error :: PingObj -> IO CString
 
 foreign import ccall unsafe
   ping_iterator_get_info :: PingObjIter -> CInt -> Ptr () -> Ptr CSize -> IO CInt
-
 
 infoBufferSize :: Info -> Word64
 infoBufferSize INFO_LATENCY = 8
